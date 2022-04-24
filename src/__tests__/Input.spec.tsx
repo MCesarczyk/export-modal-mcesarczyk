@@ -29,6 +29,12 @@ test('Input should display given placeholder', () => {
   expect(screen.getByTestId("input")).toHaveAttribute('placeholder', 'example');
 });
 
+test("Input should have another type when variable 'type' is given", () => {
+  render(<Input value="" placeholder="example" setValue={onInputChangeMock} type="date" />);
+
+  expect(screen.getByTestId("input")).toHaveAttribute('type', 'date');
+});
+
 test('Input should change value', () => {
   render(<Input value="" setValue={onInputChangeMock} />);
 
