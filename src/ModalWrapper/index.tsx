@@ -5,7 +5,9 @@ import Modal from "./Modal";
 const ModalWrapper = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => setModalOpen(true);
+  const onModalOpen = () => setModalOpen(true);
+  const onModalClose = () => setModalOpen(false);
+
 
   return (
     <>
@@ -13,9 +15,13 @@ const ModalWrapper = () => {
         aria-label="modal opening button"
         type="primary"
         title={"Open modal"}
-        onClick={openModal}
+        onClick={onModalOpen}
       />
-      <Modal visible={modalOpen} title={"Export report"} />
+      <Modal
+        visible={modalOpen}
+        onClose={onModalClose}
+        title={"Export report"}
+      />
     </>
   );
 };

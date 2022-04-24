@@ -1,12 +1,14 @@
+import { MouseEventHandler } from "react";
 import Button from "../../Button";
 import "./style.css";
 
 type modalProps = {
   visible: boolean,
+  onClose: MouseEventHandler,
   title: string
 }
 
-const Modal = ({ visible, title }: modalProps) => (
+const Modal = ({ visible, onClose, title }: modalProps) => (
   <div
     className={`ModalBody ${!visible ? "ModalBody--hidden" : ""}`}
     aria-label="modal body"
@@ -28,7 +30,7 @@ const Modal = ({ visible, title }: modalProps) => (
         aria-label="cancel button"
         type=""
         title="Cancel"
-        onClick={() => { }}
+        onClick={onClose}
       />
       <Button
         aria-label="submit button"
