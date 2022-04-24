@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DateOptionInput from "../DateOptionInput";
+import DailyOptionInput from "../DailyOptionInput";
 import Input from "../Input";
 import Label from "../Label";
 import Radio from "../Radio";
@@ -89,6 +90,12 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
           <DateOptionInput
             date={date}
             setDate={setDate}
+            hour={hour}
+            setHour={setHour}
+          />
+        }
+        {scheduleName === "Daily" &&
+          <DailyOptionInput
             hour={hour}
             setHour={setHour}
           />
