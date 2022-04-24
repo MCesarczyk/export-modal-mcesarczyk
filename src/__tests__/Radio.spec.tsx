@@ -19,14 +19,14 @@ afterEach(() => {
 });
 
 test('Radio button should render properly with label', () => {
-  render(<Radio value="" setOption={onRadioChangeMock} option="" checked={false} label="lorem ipsum" />, container);
+  render(<Radio value="" setOption={onRadioChangeMock} name="radio" checked={false} label="lorem ipsum" />, container);
 
   expect(screen.getByLabelText("lorem ipsum")).toBeInTheDocument();
 });
 
 test('Radio should change value after click', () => {
   act(() => {
-    render(<Radio value="test" setOption={onRadioChangeMock} option="" checked={false} label="lorem ipsum" />, container);
+    render(<Radio value="test" setOption={onRadioChangeMock} name="radio" checked={false} label="lorem ipsum" />, container);
 
   })
 
@@ -41,7 +41,7 @@ test('Radio should change value after click', () => {
 
 test('Radio should change value after label click', () => {
   act(() => {
-    render(<Radio value="test" setOption={onRadioChangeMock} option="" checked={false} label="lorem ipsum" />, container);
+    render(<Radio value="test" setOption={onRadioChangeMock} name="radio" checked={false} label="lorem ipsum" />, container);
 
   })
 
@@ -54,14 +54,14 @@ test('Radio should change value after label click', () => {
   expect(onRadioChangeMock).toHaveBeenCalledWith("test");
 });
 
-test("Radio should be checked when current option is active", () => {
-  render(<Radio value="test" setOption={onRadioChangeMock} option="test" checked={false} label="just do test" />, container);
+test("Radio should be checked when prop is set to true", () => {
+  render(<Radio value="test" setOption={onRadioChangeMock} name="test" checked={true} label="just do test" />, container);
 
   expect(screen.getByLabelText("just do test")).toHaveAttribute('checked');
 });
 
-test("Radio should be unchecked when current option is inactive", () => {
-  render(<Radio value="test" setOption={onRadioChangeMock} option="" checked={false} label="just do test" />, container);
+test("Radio should be unchecked when prop is set to false", () => {
+  render(<Radio value="test" setOption={onRadioChangeMock} name="test" checked={false} label="just do test" />, container);
 
   expect(screen.getByLabelText("just do test")).not.toHaveAttribute('checked');
 });

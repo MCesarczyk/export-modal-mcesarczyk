@@ -1,8 +1,8 @@
-import "./style.css";
+import React, { useState } from "react";
 import Input from "../Input";
 import Label from "../Label";
 import Radio from "../Radio";
-import React from "react";
+import "./style.css";
 
 interface Item {
   id: number,
@@ -15,13 +15,25 @@ interface Items {
 }
 
 const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
+  const [name, setName] = useState("");
+  const [formatName, setFormatName] = useState("Excel");
+  const [email, setEmail] = useState("");
+  const [scheduleName, setScheduleName] = useState("No Repeat");
+
+  const formData = {
+    name: name,
+    email: email,
+    format: formatName,
+    schedule: scheduleName
+  };
+
   return (
     <form className="Form">
       <fieldset className="FormFieldset">
         <Label text="Report name">
           <Input
-            value={""}
-            setValue={() => { }}
+            value={name}
+            setValue={setName}
             placeholder="Shareablee Report"
           />
         </Label>
@@ -31,10 +43,10 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
             return (
               <React.Fragment key={id}>
                 <Radio
-                  value={""}
-                  option={id}
-                  setOption={() => { }}
-                  name="format"
+                  value={label}
+                  checked={label === formatName}
+                  setOption={setFormatName}
+                  name={label}
                   label={label}
                 />
               </React.Fragment>
@@ -43,8 +55,8 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
         </Label>
         <Label text="E-mail to" >
           <Input
-            value={""}
-            setValue={() => { }}
+            value={email}
+            setValue={setEmail}
             placeholder="client@company.com"
           />
         </Label>
@@ -54,10 +66,10 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
             return (
               <React.Fragment key={id}>
                 <Radio
-                  value={""}
-                  option={id}
-                  setOption={() => { }}
-                  name="format"
+                  value={label}
+                  checked={label === scheduleName}
+                  setOption={setScheduleName}
+                  name={label}
                   label={label}
                 />
               </React.Fragment>
