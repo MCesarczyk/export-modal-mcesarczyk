@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DateOptionInput from "../DateOptionInput";
 import Input from "../Input";
 import Label from "../Label";
 import Radio from "../Radio";
@@ -15,16 +16,24 @@ interface Items {
 }
 
 const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
-  const [name, setName] = useState("");
   const [formatName, setFormatName] = useState("Excel");
-  const [email, setEmail] = useState("");
   const [scheduleName, setScheduleName] = useState("No Repeat");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [date, setDate] = useState("");
+  const [hour, setHour] = useState("");
 
   const formData = {
-    name: name,
-    email: email,
-    format: formatName,
-    schedule: scheduleName
+    report: {
+      name: name,
+      email: email,
+      format: formatName,
+    },
+    schedule: {
+      type: scheduleName,
+      date: date,
+      hour: hour
+    }
   };
 
   return (
@@ -76,6 +85,14 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
             )
           })}
         </Label>
+        {scheduleName === "Specific Date" &&
+          <DateOptionInput
+            date={date}
+            setDate={setDate}
+            hour={hour}
+            setHour={setHour}
+          />
+        }
       </fieldset>
     </form>
   )
