@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import { formats, schedules } from "../../assets/formData";
 import Button from "../../Button";
 import Form from "../../Form";
 import "./style.css";
@@ -23,7 +24,7 @@ const Modal = ({ visible, onClose, title }: modalProps) => (
         {title}
       </h1>
     </div>
-    <Form />
+    <Form formats={formats} schedules={schedules} />
     <div
       aria-label="modal footer"
       className="ModalFooter"

@@ -1,7 +1,7 @@
 .ModalBody {
   width: 80%;
   max-width: 600px;
-  min-height: 16rem;
+  min-height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

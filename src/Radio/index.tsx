@@ -1,25 +1,27 @@
+import "./style.css";
+
 type radioProps = {
-  value: string,
+  option:any,
   setOption: Function,
-  option:string,
-  checked: boolean,
+  value: string,
+  name: string,
   label: string
 }
 
-const Radio = ({ option, setOption, value, label }: radioProps) => (
-  <div>
+const Radio = ({ option, setOption, value, name, label }: radioProps) => (
+  <div className="RadioWrapper">
     <input
       aria-label="radio"
       data-testid="radio"
       className="radio"
       id="radio"
-      name="radio"
+      name={name}
       type="radio"
       value={value}
       checked={option === value}
       onChange={e => setOption(e.target.value)}
     />
-    <label htmlFor="radio">{label}</label>
+    <label className="RadioLabel" htmlFor="radio">{label}</label>
   </div>
 );
 

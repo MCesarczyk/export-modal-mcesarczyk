@@ -2,7 +2,7 @@ import "./style.css";
 
 type labelProps = {
   text?: string,
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
 }
 
 const Label = ({ text, children }: labelProps) => (

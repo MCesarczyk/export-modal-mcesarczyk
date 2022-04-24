@@ -1,0 +1,10 @@
+.RadioWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+}
+
+.RadioLabel {
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
