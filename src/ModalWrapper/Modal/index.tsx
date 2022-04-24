@@ -1,5 +1,6 @@
 import { MouseEventHandler } from "react";
 import Button from "../../Button";
+import Form from "../../Form";
 import "./style.css";
 
 type modalProps = {
@@ -22,6 +23,7 @@ const Modal = ({ visible, onClose, title }: modalProps) => (
         {title}
       </h1>
     </div>
+    <Form />
     <div
       aria-label="modal footer"
       className="ModalFooter"

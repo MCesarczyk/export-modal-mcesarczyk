@@ -1,3 +1,5 @@
+import "./style.css";
+
 type inputProps = {
   value: string,
   setValue: Function,
@@ -8,8 +10,8 @@ type inputProps = {
 }
 
 const Input = ({ value, setValue, placeholder, type, labeled, labelText }: inputProps) => (
-  <div>
-    {labeled && <label>{labelText}</label> }
+  <div className="InputWrapper">
+    {labeled && <label className="InputLabel">{labelText}</label> }
     <input
       aria-label="input"
       data-testid="input"
