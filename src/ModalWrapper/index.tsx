@@ -9,7 +9,12 @@ const ModalWrapper = () => {
 
   return (
     <>
-      <Button title={"Open modal"} onClick={openModal} />
+      <Button
+        aria-label="modal opening button"
+        type="primary"
+        title={"Open modal"}
+        onClick={openModal}
+      />
       <Modal visible={modalOpen} title={"Export report"} />
     </>
   );
