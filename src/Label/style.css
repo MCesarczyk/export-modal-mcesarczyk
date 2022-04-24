@@ -1,0 +1,11 @@
+.LabelWrapper {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.Label {
+  font-size: 0.75rem;
+  flex-basis: 6rem;
+  text-align: left;
+}
