@@ -1,13 +1,14 @@
 import { MouseEventHandler } from "react";
-import "./Button.css";
+import "./style.css";
 
 type buttonProps = {
+  type: string,
   title: string,
   onClick: MouseEventHandler
 }
 
-const Button = ({ title, onClick }: buttonProps) => (
-  <button className="Button" onClick={onClick}>
+const Button = ({ type, title, onClick }: buttonProps) => (
+  <button className={`Button ${type === "primary" ? "Button--primary" : ""}`} onClick={onClick}>
     {title}
   </button>
 );

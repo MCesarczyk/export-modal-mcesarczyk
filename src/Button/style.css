@@ -1,0 +1,10 @@
+.Button {
+  color: #525252;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.Button--primary {
+  color: #fff;
+  background-color: #525252;
+}
