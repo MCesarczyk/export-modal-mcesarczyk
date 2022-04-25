@@ -18,7 +18,7 @@ afterEach(() => {
 });
 
 test('button should render properly with props', () => {
-  render(<Button type='' title={'click me'} onClick={() => { }} />, container);
+  render(<Button title={'click me'} onClick={() => { }} />, container);
 
   expect(screen.getByRole('button')).toBeInTheDocument();
   expect(screen.getByText(/click me/i)).toBeInTheDocument();
@@ -26,7 +26,7 @@ test('button should render properly with props', () => {
 
 test('button should run passed function', () => {
   act(() => {
-    render(<Button type='' title={''} onClick={onButtonClickMock} />, container);
+    render(<Button title={''} onClick={onButtonClickMock} />, container);
   });
 
   fireEvent.click(screen.getByRole('button'));
@@ -37,13 +37,13 @@ test('button should run passed function', () => {
 });
 
 test('basic button should have light background', () => {
-  render(<Button type='' title={'basic button'} onClick={onButtonClickMock} />, container);
+  render(<Button title={'basic button'} onClick={onButtonClickMock} />, container);
 
   expect(screen.getByText(/basic button/i)).not.toHaveClass("Button Button--primary");
 });
 
 test('primary button should have dark background', () => {
-  render(<Button type="primary" title={'primary button'} onClick={onButtonClickMock} />, container);
+  render(<Button role="primary" title={'primary button'} onClick={onButtonClickMock} />, container);
 
   expect(screen.getByText(/primary button/i)).toHaveClass("Button Button--primary");
 });
