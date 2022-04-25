@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DateOptionInput from "../DateOptionInput";
 import DailyOptionInput from "../DailyOptionInput";
+import WeeklyOptionInput from "../WeeklyOptionInput";
 import Input from "../Input";
 import Label from "../Label";
 import Radio from "../Radio";
@@ -23,6 +24,7 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [hour, setHour] = useState("");
+  const [weekday, setWeekday] = useState("");
 
   const formData = {
     report: {
@@ -33,7 +35,8 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
     schedule: {
       type: scheduleName,
       date: date,
-      hour: hour
+      hour: hour,
+      weekday: weekday
     }
   };
 
@@ -96,6 +99,14 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
         }
         {scheduleName === "Daily" &&
           <DailyOptionInput
+            hour={hour}
+            setHour={setHour}
+          />
+        }
+        {scheduleName === "Weekly" &&
+          <WeeklyOptionInput
+            weekday={weekday}
+            setWeekday={setWeekday}
             hour={hour}
             setHour={setHour}
           />
