@@ -59,8 +59,8 @@ const Form: React.FC<Items> = ({ formats, schedules, onClose }: Items) => {
     e.preventDefault();
 
     postData(API_URL, formData)
-      .then(data => {
-        alert(`Congrats! Your report has been succesfully exported with no ${data.id}`);
+      .then(_ => {
+        alert(`Congrats! Your report has been succesfully exported.`);
       })
       .then(() => onFormClose());
   };
