@@ -1,12 +1,10 @@
-import { MouseEventHandler } from "react";
 import { formats, schedules } from "../../assets/formData";
-import Button from "../../Button";
 import Form from "../../Form";
 import "./style.css";
 
 type modalProps = {
   visible: boolean,
-  onClose: MouseEventHandler,
+  onClose: () => void,
   title: string
 }
 
@@ -24,24 +22,7 @@ const Modal = ({ visible, onClose, title }: modalProps) => (
         {title}
       </h1>
     </div>
-    <Form formats={formats} schedules={schedules} />
-    <div
-      aria-label="modal footer"
-      className="ModalFooter"
-    >
-      <Button
-        aria-label="cancel button"
-        type=""
-        title="Cancel"
-        onClick={onClose}
-      />
-      <Button
-        aria-label="submit button"
-        type="primary"
-        title="OK"
-        onClick={() => { }}
-      />
-    </div>
+    <Form formats={formats} schedules={schedules} onClose={onClose} />
   </div>
 );
 

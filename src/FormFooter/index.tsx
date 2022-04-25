@@ -15,11 +15,13 @@ const FormFooter = ({ onClose, onFormSubmit }: footerProps) => (
     <Button
       aria-label="cancel button"
       title="Cancel"
+      type="button"
       onClick={onClose}
     />
     <Button
       aria-label="submit button"
-      type="primary"
+      role="primary"
+      type="submit"
       title="OK"
       onClick={onFormSubmit}
     />

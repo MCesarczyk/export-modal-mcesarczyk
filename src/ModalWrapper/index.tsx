@@ -13,7 +13,7 @@ const ModalWrapper = () => {
     <>
       <Button
         aria-label="modal opening button"
-        type="primary"
+        role="primary"
         title={"Open modal"}
         onClick={onModalOpen}
       />

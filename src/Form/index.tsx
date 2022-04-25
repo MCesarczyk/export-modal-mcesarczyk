@@ -5,6 +5,9 @@ import WeeklyOptionInput from "../WeeklyOptionInput";
 import Input from "../Input";
 import Label from "../Label";
 import Radio from "../Radio";
+import FormFooter from "../FormFooter";
+import { postData } from "../utils/postData";
+import { API_URL } from "../assets/variables";
 import "./style.css";
 
 interface Item {
@@ -15,9 +18,10 @@ interface Item {
 interface Items {
   formats: Item[]
   schedules: Item[]
+  onClose: () => void
 }
 
-const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
+const Form: React.FC<Items> = ({ formats, schedules, onClose }: Items) => {
   const [formatName, setFormatName] = useState("Excel");
   const [scheduleName, setScheduleName] = useState("No Repeat");
   const [name, setName] = useState("");
@@ -38,6 +42,27 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
       hour: hour,
       weekday: weekday
     }
+  };
+
+  const onFormClose = () => {
+    onClose();
+    setFormatName("Excel");
+    setScheduleName("No Repeat");
+    setName("");
+    setEmail("");
+    setDate("");
+    setHour("");
+    setWeekday("");
+  };
+
+  const onFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    postData(API_URL, formData)
+      .then(data => {
+        alert(`Congrats! Your report has been succesfully exported with no ${data.id}`);
+      })
+      .then(() => onFormClose());
   };
 
   return (
@@ -112,6 +137,10 @@ const Form: React.FC<Items> = ({ formats, schedules }: Items) => {
           />
         }
       </fieldset>
+      <FormFooter
+        onClose={onFormClose}
+        onFormSubmit={onFormSubmit}
+      />
     </form>
   )
 };
