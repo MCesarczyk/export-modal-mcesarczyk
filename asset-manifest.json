@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/export-modal-mcesarczyk/static/css/main.48d3c8f4.css",
-    "main.js": "/export-modal-mcesarczyk/static/js/main.24474f6c.js",
+    "main.css": "/export-modal-mcesarczyk/static/css/main.c7b0171d.css",
+    "main.js": "/export-modal-mcesarczyk/static/js/main.98096701.js",
     "static/js/787.2a8137db.chunk.js": "/export-modal-mcesarczyk/static/js/787.2a8137db.chunk.js",
     "index.html": "/export-modal-mcesarczyk/index.html",
-    "main.48d3c8f4.css.map": "/export-modal-mcesarczyk/static/css/main.48d3c8f4.css.map",
-    "main.24474f6c.js.map": "/export-modal-mcesarczyk/static/js/main.24474f6c.js.map",
+    "main.c7b0171d.css.map": "/export-modal-mcesarczyk/static/css/main.c7b0171d.css.map",
+    "main.98096701.js.map": "/export-modal-mcesarczyk/static/js/main.98096701.js.map",
     "787.2a8137db.chunk.js.map": "/export-modal-mcesarczyk/static/js/787.2a8137db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48d3c8f4.css",
-    "static/js/main.24474f6c.js"
+    "static/css/main.c7b0171d.css",
+    "static/js/main.98096701.js"
   ]
 }
