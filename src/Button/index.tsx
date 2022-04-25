@@ -2,7 +2,7 @@ import { MouseEventHandler } from "react";
 import "./style.css";
 
 type buttonProps = {
-  type: string,
+  type?: string,
   title: string,
   onClick: MouseEventHandler
 }
